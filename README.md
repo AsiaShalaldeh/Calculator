@@ -1,4 +1,4 @@
-# calculator
+# Calculator
 
 This is a simple Calculator using Flutter
 
@@ -6,11 +6,10 @@ This is a simple Calculator using Flutter
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Steps
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Enter the first number
+2. Enter the second number
+3. Choose an operation - click on a button 
+4. Click on the Calculate button to calculate the result 
+5. The Result will be displayed 

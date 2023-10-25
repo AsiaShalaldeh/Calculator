@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(CalculatorApp());
+  runApp(const CalculatorApp());
 }
 
 class CalculatorApp extends StatelessWidget {
+  const CalculatorApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,6 +16,8 @@ class CalculatorApp extends StatelessWidget {
 }
 
 class Calculator extends StatefulWidget {
+  const Calculator({super.key});
+
   @override
   _CalculatorState createState() => _CalculatorState();
 }
@@ -28,24 +32,26 @@ class _CalculatorState extends State<Calculator> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Calculator"),
+          title: const Text("Calculator"),
         ),
         body: Container(
-          margin: EdgeInsets.all(20.0),
+          margin: const EdgeInsets.all(20.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               TextField(
                 controller: firstNumberController,
                 keyboardType: TextInputType.number,
-                style: TextStyle(fontSize: 22.0),
-                decoration: InputDecoration(labelText: "Enter First Number "),
+                style: const TextStyle(fontSize: 22.0),
+                decoration:
+                    const InputDecoration(labelText: "Enter First Number "),
               ),
               TextField(
                 controller: secondNumberController,
                 keyboardType: TextInputType.number,
-                style: TextStyle(fontSize: 22.0),
-                decoration: InputDecoration(labelText: "Enter Second Number "),
+                style: const TextStyle(fontSize: 22.0),
+                decoration:
+                    const InputDecoration(labelText: "Enter Second Number "),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -58,15 +64,18 @@ class _CalculatorState extends State<Calculator> {
               ),
               ElevatedButton(
                   onPressed: calculateResult,
-                  child: Text(
-                    'Calculate',
-                    style: TextStyle(fontSize: 24.0),
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'Calculate',
+                      style: TextStyle(fontSize: 24.0),
+                    ),
                   )),
               Container(
-                margin: EdgeInsets.all(8.0),
+                margin: const EdgeInsets.all(8.0),
                 child: Text(
                   'Result = ${output.toStringAsFixed(2)}',
-                  style: TextStyle(fontSize: 24),
+                  style: const TextStyle(fontSize: 24),
                 ),
               ),
             ],
@@ -77,7 +86,7 @@ class _CalculatorState extends State<Calculator> {
   Widget buildOperationButton(String opeation) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: ElevatedButton(
+      child: TextButton(
         onPressed: () {
           setState(
             () {
@@ -85,7 +94,11 @@ class _CalculatorState extends State<Calculator> {
             },
           );
         },
-        child: Text(opeation, style: TextStyle(fontSize: 30)),
+        style: TextButton.styleFrom(
+          backgroundColor: Colors.blue,
+        ),
+        child: Text(opeation,
+            style: const TextStyle(fontSize: 30, color: Colors.white)),
       ),
     );
   }
